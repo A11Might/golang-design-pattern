@@ -1,0 +1,36 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+interface Aggregate {
+    Iterator()
+}
+interface Iterator {
+    HasNext()
+    Next()
+}
+class Book {
+    name
+    GetName()
+}
+class BookShelf {
+    books
+    last
+    GetBookAt()
+    AppendBook()
+    GetLength()
+    Iterator()
+}
+class BookShelfIterator {
+    bookShelf
+    index
+    HasNext()
+    Next()
+}
+
+Aggregate -> Iterator: Creates >
+Aggregate <|.. BookShelf
+Iterator <|.. BookShelfIterator
+BookShelf <-o BookShelfIterator
+BookShelf o--> Book
+
+@enduml

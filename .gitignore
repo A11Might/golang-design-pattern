@@ -13,3 +13,12 @@
 
 # Dependency directories (remove the comment below to include it)
 # vendor/
+
+# .idea
+.idea
+
+# .vscode
+.vscode
+
+# .DS_Store
+.DS_Store
