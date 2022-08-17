@@ -1,0 +1,25 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+object main
+interface Print {
+    PrintWeak()
+    PrintStrong()
+}
+class PrintBanner {
+    banner
+    PrintWeak()
+    PrintStrong()
+}
+class Banner {
+    string
+    PrintWithParen()
+    PrintWithAster()
+}
+
+main --> Print: Uses >
+Print <|. PrintBanner
+PrintBanner o-> Banner
+
+
+@enduml

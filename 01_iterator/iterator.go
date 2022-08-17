@@ -23,7 +23,7 @@ func (b *Book) GetName() string {
 	return b.name
 }
 
-// BookShelf 具体集合
+// BookShelf 具体集合(ConcreteAggregate)
 type BookShelf struct {
 	books []*Book
 	last  int
@@ -53,7 +53,7 @@ func (b *BookShelf) Iterator() Iterator {
 	return NewBookShelfIterator(b)
 }
 
-// BookShelfIterator 具体迭代器
+// BookShelfIterator 具体迭代器(concreteIterator)
 type BookShelfIterator struct {
 	bookShelf *BookShelf
 	index     int
