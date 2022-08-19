@@ -16,14 +16,16 @@ type Book struct {
 }
 
 func NewBook(name string) *Book {
-	return &Book{name: name}
+	return &Book{
+		name: name,
+	}
 }
 
 func (b *Book) GetName() string {
 	return b.name
 }
 
-// BookShelf 具体集合(ConcreteAggregate)
+// BookShelf 具体集合(concrete aggregate)
 type BookShelf struct {
 	books []*Book
 	last  int
@@ -53,7 +55,7 @@ func (b *BookShelf) Iterator() Iterator {
 	return NewBookShelfIterator(b)
 }
 
-// BookShelfIterator 具体迭代器(concreteIterator)
+// BookShelfIterator 具体迭代器(concrete iterator)
 type BookShelfIterator struct {
 	bookShelf *BookShelf
 	index     int

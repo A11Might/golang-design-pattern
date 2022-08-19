@@ -1,0 +1,34 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+object main
+interface DisplayIface {
+    Open()
+	Print()
+	Close()
+}
+abstract class Display {
+    DisplayIface
+    Open()
+	Print()
+	Close()
+    Display()
+}
+class CharDisplay {
+    Open()
+	Print()
+	Close()
+}
+class StringDisplay {
+    Open()
+	Print()
+	Close()
+    printLine()
+}
+
+main -> Display: Uses >
+Display o--> DisplayIface
+DisplayIface <|.. CharDisplay
+DisplayIface <|.. StringDisplay
+
+@enduml

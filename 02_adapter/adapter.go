@@ -8,7 +8,9 @@ type Banner struct {
 }
 
 func NewBanner(str string) *Banner {
-	return &Banner{str: str}
+	return &Banner{
+		str: str,
+	}
 }
 
 func (b *Banner) PrintWithParen() {
@@ -31,7 +33,9 @@ type PrintBanner struct {
 }
 
 func NewPrintBanner(str string) *PrintBanner {
-	return &PrintBanner{Banner: *NewBanner(str)}
+	return &PrintBanner{
+		Banner: *NewBanner(str),
+	}
 }
 
 func (p *PrintBanner) PrintWeak() {
