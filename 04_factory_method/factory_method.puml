@@ -1,0 +1,38 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+package framework {
+    interface Product {
+        Use()
+    }
+    interface FactoryIface {
+        CreateProduct()
+        RegisterProduct()
+    }
+    abstract class Factory {
+        FactoryIface
+        Create()
+    }
+}
+package idcard {
+    class IDCard {
+        owner
+        Use()
+        GetOwner()
+    }
+    class IDCardFactory {
+        owners
+        CreateProduct()
+        RegisterProduct()
+        GetOwners()
+    }
+}
+
+Factory -> Product: Creates >
+
+Factory o--> FactoryIface
+FactoryIface <|.. IDCardFactory
+IDCardFactory -> IDCard: Creates >
+Product <|.. IDCard
+
+@enduml

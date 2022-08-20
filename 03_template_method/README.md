@@ -6,7 +6,7 @@
 
 Golang 没有继承，使用组合实现。
 
-![image-20220819224403169](./template_method.png)
+![template_method](./template_method.png)
 
 ### 拓展思路的要点
 

@@ -9,9 +9,6 @@ interface DisplayIface {
 }
 abstract class Display {
     DisplayIface
-    Open()
-	Print()
-	Close()
     Display()
 }
 class CharDisplay {
