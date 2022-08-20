@@ -1,0 +1,28 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+interface Product {
+    Use()
+    CreateClone()
+}
+class Manager {
+    showcase
+    Register()
+    Create()
+}
+class MessageBox {
+    decoChar
+    Use()
+    CreateClone()
+}
+class UnderlinePen {
+    ulChar
+    Use()
+    CreateClone()
+}
+
+Manager -> Product: Uses >
+Product <|.. MessageBox
+Product <|.. UnderlinePen
+
+@enduml
