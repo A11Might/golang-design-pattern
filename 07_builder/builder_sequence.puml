@@ -1,0 +1,25 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+participant "main" as main
+participant "director:Director" as dr
+participant "textBuilder:TextBuilder" as tr
+
+
+main -> tr: NewTextBuilder()
+main -> dr: NewDirector()
+autoactivate on
+main -> dr: Construct()
+dr -> tr: MakeTitle()
+return
+dr -> tr: MakeString()
+return
+dr -> tr: MakeItems()
+return
+dr -> tr: Close()
+return
+return
+main -> tr: GetResult()
+return
+
+@enduml

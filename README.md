@@ -34,11 +34,13 @@ Go 语言设计模式的实现代码
 
 - [SingleTon 模式（单例模式）](./05_singleton/)
 - [Prototype 模式（原型模式）](./06_prototype/)
+- [Builder 模式（建造者模式）](./07_builder/)
 
 ## GoF 设计模式分类
 
 ### 创建型设计模式
 
+- [Builder 模式（建造者模式）](./07_builder/)
 - [Factory Method 模式（工厂方法模式）](./04_factory_method/)
 - [Prototype 模式（原型模式）](./06_prototype/)
 - [SingleTon 模式（单例模式）](./05_singleton/)

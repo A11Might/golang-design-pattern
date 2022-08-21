@@ -1,0 +1,41 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+object main
+interface Builder {
+    MakeTitle()
+    MakeString()
+    MakeItems()
+    Close()
+}
+class Director {
+    Builder
+    Construct()
+}
+class TextBuilder {
+    buffer
+    MakeTitle()
+    MakeString()
+    MakeItems()
+    Close()
+    GetResult()
+}
+class HTMLBuilder {
+    filename
+    writer
+    MakeTitle()
+    MakeString()
+    MakeItems()
+    Close()
+    GetResult()
+}
+
+main -> Director: Uses >
+Director o-> Builder
+Builder <|.. TextBuilder
+Builder <|.. HTMLBuilder
+main -> TextBuilder: Uses >
+main -> HTMLBuilder: Uses >
+
+
+@enduml
