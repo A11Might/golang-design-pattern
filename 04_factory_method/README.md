@@ -4,8 +4,6 @@
 
 ### 示例程序类图
 
-Golang 没有继承，使用组合实现。
-
 ![factory](./factory_method.png)
 
 ### 拓展思路的要点

@@ -2,6 +2,8 @@
 
 Go 语言设计模式的实现代码
 
+🚧施工中，进度[8/23]
+
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 **Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
@@ -35,11 +37,13 @@ Go 语言设计模式的实现代码
 - [SingleTon 模式（单例模式）](./05_singleton/)
 - [Prototype 模式（原型模式）](./06_prototype/)
 - [Builder 模式（建造者模式）](./07_builder/)
+- [Abstract Factory 模式（抽象工厂模式）](./08_abstract_factory/)
 
 ## GoF 设计模式分类
 
 ### 创建型设计模式
 
+- [Abstract Factory 模式（抽象工厂模式）](./08_abstract_factory/)
 - [Builder 模式（建造者模式）](./07_builder/)
 - [Factory Method 模式（工厂方法模式）](./04_factory_method/)
 - [Prototype 模式（原型模式）](./06_prototype/)
@@ -58,5 +62,5 @@ Go 语言设计模式的实现代码
 ## 感谢
 
 - [图解设计模式](https://book.douban.com/subject/26933281/)
-- [senghoo/golang-design-pattern](https://github.com/senghoo/golang-design-pattern) 
 - [Refactoring.Guru 设计模式](https://refactoringguru.cn/design-patterns)
+- [senghoo/golang-design-pattern](https://github.com/senghoo/golang-design-pattern) 

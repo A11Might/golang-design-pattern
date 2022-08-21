@@ -4,12 +4,10 @@
 
 ### 示例程序类图
 
-Golang 没有继承，使用组合实现。
-
 ![template_method](./template_method.png)
 
 ### 拓展思路的要点
 
-1. 在父类模板方法中编写的算法，无需在子类中重复编写。
+1. 在父类模板方法中编写的算法（Display()），无需在子类中重复编写。
 2. 需要理解父类中的抽象方法（Display()），才能够编写出子类（CharDisplay, StringDisplay）。
 3. 父类变量保存子类实例，然后调用 Display()，无论哪个子类实例都能正常运行，符合 LSP（里氏替换原则）
