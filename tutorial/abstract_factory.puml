@@ -1,0 +1,26 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+object main
+interface IFoo {
+    {abstract}GetFooField()
+	{abstract}SetFooField()
+	{abstract}AbstractMethod()
+}
+abstract class Foo {
+    IFoo
+    fooField
+    Method()
+}
+class xxFoo {
+    xxFooField
+    GetFooField()
+	SetFooField()
+	AbstractMethod()
+}
+
+main -> Foo: Uses >
+Foo o--> IFoo
+IFoo <|.. xxFoo
+
+@enduml
