@@ -2,15 +2,16 @@
 'https://plantuml.com/class-diagram
 
 object main
-interface IFoo {
-    {abstract}GetFooField()
-	{abstract}SetFooField()
-	{abstract}AbstractMethod()
-}
 abstract class Foo {
     IFoo
     fooField
+    {abstract}AbstractMethod()
     Method()
+}
+interface FooImpl {
+    {abstract}GetFooField()
+	{abstract}SetFooField()
+	{abstract}AbstractMethod()
 }
 class xxFoo {
     xxFooField
@@ -20,7 +21,7 @@ class xxFoo {
 }
 
 main -> Foo: Uses >
-Foo o--> IFoo
-IFoo <|.. xxFoo
+Foo o--> FooImpl
+FooImpl <|.. xxFoo
 
 @enduml

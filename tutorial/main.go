@@ -2,17 +2,15 @@ package main
 
 import "fmt"
 
-type IFoo interface {
-	GetFooField() string
-	SetFooField(string)
-	AbstractMethod()
-}
-
 // 抽象类(abstract class)
 type Foo struct {
-	IFoo
+	FooImpl
 
 	fooField string
+}
+
+func (f *Foo) AbstractMethod() {
+	panic("Foo not implement AbstractMethod method")
 }
 
 func (f *Foo) Method() {
@@ -22,9 +20,15 @@ func (f *Foo) Method() {
 	fmt.Println("call Foo Method")
 }
 
+type FooImpl interface {
+	GetFooField() string
+	SetFooField(string)
+	AbstractMethod()
+}
+
 // 具体子类(concrete subclass)
 type xxFoo struct {
-	Foo
+	*Foo
 
 	xxFooField string
 }
@@ -43,9 +47,9 @@ func (x *xxFoo) AbstractMethod() {
 
 func main() {
 	foo := Foo{
-		IFoo: &xxFoo{
+		FooImpl: &xxFoo{
 			// 初始化字段值
-			Foo: Foo{
+			Foo: &Foo{
 				fooField: "origin foo",
 			},
 			xxFooField: "origin xx foo",

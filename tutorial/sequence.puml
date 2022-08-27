@@ -1,0 +1,15 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+participant "main" as main
+participant ":Foo" as foo
+
+create ":xxFoo" as xxfoo
+main -> xxfoo: new
+autoactivate on
+main -> foo: Method()
+foo -> xxfoo: AbstractMethod()
+return
+return
+
+@enduml

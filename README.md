@@ -43,6 +43,10 @@ Go 语言设计模式的实现代码，[Quick Start](./tutorial/tutorial.md)
 - [Builder 模式（建造者模式）](./07_builder/)
 - [Abstract Factory 模式（抽象工厂模式）](./08_abstract_factory/)
 
+### 分开考虑
+
+- [Bridge 模式（桥接模式）](./09_bridge/)
+
 ## GoF 设计模式分类
 
 ### 创建型设计模式
@@ -56,6 +60,7 @@ Go 语言设计模式的实现代码，[Quick Start](./tutorial/tutorial.md)
 ### 结构性设计模式
 
 - [Adapter 模式（适配器模式）](./02_adapter/)
+- [Bridge 模式（桥接模式）](./09_bridge/)
 
 ### 行为型设计模式
 
