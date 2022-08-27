@@ -6,7 +6,7 @@
 
 Go 语言设计模式的实现代码，[Quick Start](./tutorial/tutorial.md)
 
-🚧施工中，进度[8/23]
+🚧施工中，进度[9/23]
 
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
@@ -16,6 +16,7 @@ Go 语言设计模式的实现代码，[Quick Start](./tutorial/tutorial.md)
   - [适应设计模式](#%E9%80%82%E5%BA%94%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F)
   - [交给子类](#%E4%BA%A4%E7%BB%99%E5%AD%90%E7%B1%BB)
   - [生成实例](#%E7%94%9F%E6%88%90%E5%AE%9E%E4%BE%8B)
+  - [分开考虑](#%E5%88%86%E5%BC%80%E8%80%83%E8%99%91)
 - [GoF 设计模式分类](#gof-%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E5%88%86%E7%B1%BB)
   - [创建型设计模式](#%E5%88%9B%E5%BB%BA%E5%9E%8B%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F)
   - [结构性设计模式](#%E7%BB%93%E6%9E%84%E6%80%A7%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F)
