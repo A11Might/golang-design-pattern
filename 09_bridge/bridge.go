@@ -8,25 +8,25 @@ type IDisplay interface {
 
 // Display 抽象部分(abstraction)
 type Display struct {
-	DisplayImpl
+	impl DisplayImpl
 }
 
 func NewDisplay(impl DisplayImpl) IDisplay {
 	return &Display{
-		DisplayImpl: impl,
+		impl: impl,
 	}
 }
 
 func (d *Display) Open() {
-	d.RawOpen()
+	d.impl.RawOpen()
 }
 
 func (d *Display) Print() {
-	d.RawPrint()
+	d.impl.RawPrint()
 }
 
 func (d *Display) Close() {
-	d.RawClose()
+	d.impl.RawClose()
 }
 
 func (d *Display) DisplaySth() {

@@ -11,20 +11,20 @@ interface IDisplay {
 }
 package 桥接 <<rectangle>> {
     abstract class Display {
-        DisplayImpl
+        impl DisplayImpl
         Open()
         Print()
         Close()
         DisplaySth()
     }
     note left of Display::Open
-    RawOpen()
+    impl.RawOpen()
     end note
     note left of Display::Print
-    RawPrint()
+    impl.RawPrint()
     end note
     note left of Display::Close
-    RawClose()
+    impl.RawClose()
     end note
     note left of Display::DisplaySth
     Open()

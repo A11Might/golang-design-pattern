@@ -18,4 +18,7 @@ Golang 通过结构体（Foo）匿名组合（FooImpl）接口来实现抽象类
 
 ![class](./sequence.png)
 
-注：本 repo 中的 UML 都是使用 [PlantUML](https://plantuml.com/) 编写的，示例 [类图](./class.puml)、[时序图](./sequence.puml)。
+注：
+
+1. 本 repo 中的 UML 都是使用 [PlantUML](https://plantuml.com/) 编写的，示例 [类图](./class.puml)、[时序图](./sequence.puml)。
+2. 聚合和组合的区别：聚合体现 has a 关系，组合体现 contains a 关系。

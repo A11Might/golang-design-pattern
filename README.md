@@ -29,24 +29,24 @@ Go 语言设计模式的实现代码，[Quick Start](./tutorial/tutorial.md)。
 
 ### 适应设计模式
 
-- [Iterator 模式（迭代器模式）](./01_iterator/)
-- [Adapter 模式（适配器模式）](./02_adapter/)
+- [Iterator 模式（迭代器模式）](./01_iterator/)：一个一个遍历
+- [Adapter 模式（适配器模式）](./02_adapter/)：加个 “适配器” 以便于复用
 
 ### 交给子类
 
-- [Template Method 模式（模板方法模式）](./03_template_method/)
-- [Factory Method 模式（工厂方法模式）](./04_factory_method/)
+- [Template Method 模式（模板方法模式）](./03_template_method/)：将具体处理交给子类
+- [Factory Method 模式（工厂方法模式）](./04_factory_method/)：将实例的生成交给子类
 
 ### 生成实例
 
-- [SingleTon 模式（单例模式）](./05_singleton/)
-- [Prototype 模式（原型模式）](./06_prototype/)
-- [Builder 模式（建造者模式）](./07_builder/)
-- [Abstract Factory 模式（抽象工厂模式）](./08_abstract_factory/)
+- [SingleTon 模式（单例模式）](./05_singleton/)：只有一个实例
+- [Prototype 模式（原型模式）](./06_prototype/)：通过复制生成实例
+- [Builder 模式（建造者模式）](./07_builder/)：组装复杂的实例
+- [Abstract Factory 模式（抽象工厂模式）](./08_abstract_factory/)：将关联零件组装成产品
 
 ### 分开考虑
 
-- [Bridge 模式（桥接模式）](./09_bridge/)
+- [Bridge 模式（桥接模式）](./09_bridge/)：将类的功能层次结构与实现层次结构分离
 
 ## GoF 设计模式分类
 
