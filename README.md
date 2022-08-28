@@ -4,7 +4,7 @@
 <img src="./gopher.png" width=20%>
 </div>
 
-Go 语言设计模式的实现代码，[Quick Start](./tutorial/tutorial.md)
+Go 语言设计模式的实现代码，[Quick Start](./tutorial/tutorial.md)。
 
 🚧施工中，进度[9/23]
 

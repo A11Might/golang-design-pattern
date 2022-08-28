@@ -5,14 +5,17 @@ object main
 abstract class Foo {
     IFoo
     fooField
-    {abstract}AbstractMethod()
     Method()
 }
+note right: 三个区域分别是类名、字段名和方法名
 interface FooImpl {
     {abstract}GetFooField()
 	{abstract}SetFooField()
 	{abstract}AbstractMethod()
 }
+note right of FooImpl::AbstractMethod
+    斜体为抽象方法
+end note
 class xxFoo {
     xxFooField
     GetFooField()
@@ -21,7 +24,9 @@ class xxFoo {
 }
 
 main -> Foo: Uses >
-Foo o--> FooImpl
+Foo *--> FooImpl
+note on link: Foo 组合 FooImpl 接口
 FooImpl <|.. xxFoo
+note on link: xxFoo 实现 FooImpl 接口
 
 @enduml

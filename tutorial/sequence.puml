@@ -3,12 +3,16 @@
 
 participant "main" as main
 participant ":Foo" as foo
+note right of foo
+    {实例名}:{类名} 代表类及实例
+end note
 
 create ":xxFoo" as xxfoo
 main -> xxfoo: new
 autoactivate on
 main -> foo: Method()
 foo -> xxfoo: AbstractMethod()
+note right: 方法调用及返回
 return
 return
 

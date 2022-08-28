@@ -9,10 +9,6 @@ type Foo struct {
 	fooField string
 }
 
-func (f *Foo) AbstractMethod() {
-	panic("Foo not implement AbstractMethod method")
-}
-
 func (f *Foo) Method() {
 	f.SetFooField("foo")
 	fmt.Println("foo field:", f.GetFooField())
