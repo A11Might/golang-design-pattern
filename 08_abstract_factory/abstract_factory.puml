@@ -1,30 +1,32 @@
 @startuml
 'https://plantuml.com/class-diagram
 
-package factory {
-    interface ILink {
-        MakeHTML()
+object main
+note left: GetFactory("ListFactory")
+package 抽象工厂 {
+    interface LinkImpl {
+        {abstract}MakeHTML()
     }
     abstract class Link {
-        ILink
+        LinkImpl
     }
-    interface ITray {
-        getTray()
-        setTray()
-        MakeHTML()
+    interface TrayImpl {
+        {abstract}getTray()
+        {abstract}setTray()
+        {abstract}MakeHTML()
     }
     abstract class Tray {
-        ITray
+        TrayImpl
         Add()
     }
-    interface IPage {
-        getTitle()
-        getContent()
-        setContent()
-        MakeHTML()
+    interface PageImpl {
+        {abstract}getTitle()
+        {abstract}getContent()
+        {abstract}setContent()
+        {abstract}MakeHTML()
     }
     abstract class Page {
-        IPage
+        PageImpl
         Add()
         Output()
     }
@@ -34,7 +36,7 @@ package factory {
         CreatePage()
     }
 }
-package listfactory {
+package 具体工厂 {
     class ListLink {
         caption
         url
@@ -63,15 +65,16 @@ package listfactory {
     }
 }
 
-ILink <--o Link
-ITray <--o Tray
-IPage <--o Page
+LinkImpl <--* Link
+TrayImpl <--* Tray
+PageImpl <--* Page
 Link <-- Factory: Creates <
 Tray <-- Factory: Creates <
 Page <-- Factory: Creates <
-ILink <|.. ListLink
-ITray <|.. ListTray
-IPage <|.. ListPage
+Factory <-- main: Uses <
+LinkImpl <|.. ListLink
+TrayImpl <|.. ListTray
+PageImpl <|.. ListPage
 ListLink <-- ListFactory: Creates <
 ListTray <-- ListFactory: Creates <
 ListPage <-- ListFactory: Creates <

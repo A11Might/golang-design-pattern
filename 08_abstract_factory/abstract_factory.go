@@ -6,43 +6,26 @@ import (
 	"strings"
 )
 
-type ILink interface {
-	MakeHTML() string
-}
-
 // Link 抽象产品(abstract product)
 type Link struct {
-	ILink
-}
-
-type ITray interface {
-	getTray() []ILink
-	setTray([]ILink)
-	MakeHTML() string
+	LinkImpl
 }
 
 // Tray 抽象产品(abstract product)
 type Tray struct {
-	ITray
+	TrayImpl
 }
 
-func (t *Tray) Add(item ILink) {
+func (t *Tray) Add(item LinkImpl) {
 	t.setTray(append(t.getTray(), item))
-}
-
-type IPage interface {
-	getTitle() string
-	getContent() []ITray
-	setContent([]ITray)
-	MakeHTML() string
 }
 
 // Page 抽象产品(abstract product)
 type Page struct {
-	IPage
+	PageImpl
 }
 
-func (p *Page) Add(item ITray) {
+func (p *Page) Add(item TrayImpl) {
 	p.setContent(append(p.getContent(), item))
 }
 
@@ -70,13 +53,17 @@ func GetFactory(className string) Factory {
 	}
 }
 
+type LinkImpl interface {
+	MakeHTML() string
+}
+
 // ListLink 具体产品(concrete product)
 type ListLink struct {
 	caption string
 	url     string
 }
 
-func NewListLink(caption, url string) ILink {
+func NewListLink(caption, url string) LinkImpl {
 	return &ListLink{
 		caption: caption,
 		url:     url,
@@ -87,24 +74,30 @@ func (l *ListLink) MakeHTML() string {
 	return fmt.Sprintf("    <li><a href=\"%s\">%s</a></li>\n", l.url, l.caption)
 }
 
+type TrayImpl interface {
+	getTray() []LinkImpl
+	setTray([]LinkImpl)
+	MakeHTML() string
+}
+
 // ListTray 具体产品(concrete product)
 type ListTray struct {
 	caption string
-	tray    []ILink
+	tray    []LinkImpl
 }
 
-func NewListTray(caption string) ITray {
+func NewListTray(caption string) TrayImpl {
 	return &ListTray{
 		caption: caption,
-		tray:    make([]ILink, 0),
+		tray:    make([]LinkImpl, 0),
 	}
 }
 
-func (l *ListTray) getTray() []ILink {
+func (l *ListTray) getTray() []LinkImpl {
 	return l.tray
 }
 
-func (l *ListTray) setTray(tray []ILink) {
+func (l *ListTray) setTray(tray []LinkImpl) {
 	l.tray = tray
 }
 
@@ -121,18 +114,25 @@ func (l *ListTray) MakeHTML() string {
 	return buffer.String()
 }
 
+type PageImpl interface {
+	getTitle() string
+	getContent() []TrayImpl
+	setContent([]TrayImpl)
+	MakeHTML() string
+}
+
 // ListPage 具体产品(concrete product)
 type ListPage struct {
 	title   string
 	author  string
-	content []ITray
+	content []TrayImpl
 }
 
-func NewListPage(title, author string) IPage {
+func NewListPage(title, author string) PageImpl {
 	return &ListPage{
 		title:   title,
 		author:  author,
-		content: make([]ITray, 0),
+		content: make([]TrayImpl, 0),
 	}
 }
 
@@ -140,11 +140,11 @@ func (l *ListPage) getTitle() string {
 	return l.title
 }
 
-func (l *ListPage) getContent() []ITray {
+func (l *ListPage) getContent() []TrayImpl {
 	return l.content
 }
 
-func (l *ListPage) setContent(content []ITray) {
+func (l *ListPage) setContent(content []TrayImpl) {
 	l.content = content
 }
 
@@ -173,18 +173,18 @@ func NewListFactory() Factory {
 
 func (l *ListFactory) CreateLink(caption, url string) *Link {
 	return &Link{
-		ILink: NewListLink(caption, url),
+		LinkImpl: NewListLink(caption, url),
 	}
 }
 
 func (l *ListFactory) CreateTray(caption string) *Tray {
 	return &Tray{
-		ITray: NewListTray(caption),
+		TrayImpl: NewListTray(caption),
 	}
 }
 
 func (l *ListFactory) CreatePage(title, author string) *Page {
 	return &Page{
-		IPage: NewListPage(title, author),
+		PageImpl: NewListPage(title, author),
 	}
 }
