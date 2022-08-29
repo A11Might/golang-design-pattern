@@ -3,13 +3,13 @@
 
 object main
 interface Builder {
-    MakeTitle()
-    MakeString()
-    MakeItems()
-    Close()
+    {abstract}MakeTitle()
+    {abstract}MakeString()
+    {abstract}MakeItems()
+    {abstract}Close()
 }
 class Director {
-    Builder
+    builder Builder
     Construct()
 }
 class TextBuilder {

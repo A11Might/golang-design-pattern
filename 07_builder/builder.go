@@ -6,39 +6,39 @@ import (
 	"strings"
 )
 
+// Director 监工
+type Director struct {
+	builder Builder
+}
+
+func NewDirector(builder Builder) *Director {
+	return &Director{
+		builder: builder,
+	}
+}
+
+func (d *Director) Construct() {
+	d.builder.MakeTitle("Greeting")
+	d.builder.MakeString("从早上至下午")
+	d.builder.MakeItems([]string{
+		"早上好。",
+		"下午好。",
+	})
+	d.builder.MakeString("晚上")
+	d.builder.MakeItems([]string{
+		"晚上好。",
+		"晚安。",
+		"再见。",
+	})
+	d.builder.Close()
+}
+
 // Builder 建造者
 type Builder interface {
 	MakeTitle(title string)
 	MakeString(str string)
 	MakeItems(items []string)
 	Close()
-}
-
-// Director 监工
-type Director struct {
-	Builder
-}
-
-func NewDirector(builder Builder) *Director {
-	return &Director{
-		Builder: builder,
-	}
-}
-
-func (d *Director) Construct() {
-	d.MakeTitle("Greeting")
-	d.MakeString("从早上至下午")
-	d.MakeItems([]string{
-		"早上好。",
-		"下午好。",
-	})
-	d.MakeString("晚上")
-	d.MakeItems([]string{
-		"晚上好。",
-		"晚安。",
-		"再见。",
-	})
-	d.Close()
 }
 
 // TextBuilder 具体的建造者(concrete builder)

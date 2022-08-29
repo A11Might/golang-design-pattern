@@ -66,7 +66,6 @@ Go 语言设计模式的实现代码，[Quick Start](./tutorial/tutorial.md)。
 ### 行为型设计模式
 
 - [Iterator 模式（迭代器模式）](./01_iterator/)
-
 - [Template Method 模式（模板方法模式）](./03_template_method/)
 
 ## 感谢
