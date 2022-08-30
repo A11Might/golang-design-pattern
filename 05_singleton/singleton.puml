@@ -1,9 +1,12 @@
 @startuml
 'https://plantuml.com/class-diagram
 
+object main
 class singleton {
-    - singleton
-    + GetInstance()
+    singleton
+    GetInstance()
 }
+
+main -> singleton: Uses >
 
 @enduml
