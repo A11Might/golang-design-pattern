@@ -2,12 +2,6 @@ package prototype
 
 import "fmt"
 
-// Product 原型(prototype)
-type Product interface {
-	Use(s string)
-	CreateClone() Product
-}
-
 // Manager 使用者(client)
 type Manager struct {
 	showcase map[string]Product
@@ -26,6 +20,12 @@ func (m *Manager) Register(name string, proto Product) {
 func (m *Manager) Create(protoName string) Product {
 	p := m.showcase[protoName]
 	return p.CreateClone()
+}
+
+// Product 原型(prototype)
+type Product interface {
+	Use(s string)
+	CreateClone() Product
 }
 
 // MessageBox 具体的原型(concrete prototype)

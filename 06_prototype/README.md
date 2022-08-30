@@ -1,8 +1,12 @@
 ## Prototype 模式
 
-根据实例来生成新实例的模式就是 Prototype 模式（原型模式）。
+> **原型**是一种创建型设计模式， 使你能够复制对象， 甚至是复杂对象， 而又无需使代码依赖它们所属的类。
 
 ### 示例程序类图
+
+1. Product 接口：原型（Prototype），定义用于复制实例的方法。
+2. MessageBox 类、UnderlinePen 类：具体的原型（ConcretePrototype），实现复制实例的方法。
+3. Manager 类：使用者（Client），使用复制实例的方法生成新实例。
 
 ![prototype](./prototype.png)
 

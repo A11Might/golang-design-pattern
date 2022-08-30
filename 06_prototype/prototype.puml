@@ -1,14 +1,15 @@
 @startuml
 'https://plantuml.com/class-diagram
 
-interface Product {
-    Use()
-    CreateClone()
-}
+object main
 class Manager {
-    showcase
+    showcase map[string]Product
     Register()
     Create()
+}
+interface Product {
+    {abstract}Use()
+    {abstract}CreateClone()
 }
 class MessageBox {
     decoChar
@@ -21,7 +22,8 @@ class UnderlinePen {
     CreateClone()
 }
 
-Manager -> Product: Uses >
+main --> Manager: Uses >
+Manager o-> Product
 Product <|.. MessageBox
 Product <|.. UnderlinePen
 
