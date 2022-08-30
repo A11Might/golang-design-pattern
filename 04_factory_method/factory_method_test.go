@@ -2,7 +2,7 @@ package factorymethod
 
 func ExampleFactoryMethod() {
 	factory := Factory{
-		FactoryIface: NewIDCardFactory(),
+		FactoryImpl: NewIDCardFactory(),
 	}
 	var card1, card2, card3 Product
 	card1 = factory.Create("小明")

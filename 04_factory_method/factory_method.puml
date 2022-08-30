@@ -1,20 +1,21 @@
 @startuml
 'https://plantuml.com/class-diagram
 
-package framework {
+object main
+package 框架 {
     interface Product {
-        Use()
+        {abstract}Use()
     }
-    interface FactoryIface {
-        CreateProduct()
-        RegisterProduct()
+    interface FactoryImpl {
+        {abstract}CreateProduct()
+        {abstract}RegisterProduct()
     }
     abstract class Factory {
-        FactoryIface
+        FactoryImpl
         Create()
     }
 }
-package idcard {
+package 具体加工 {
     class IDCard {
         owner
         Use()
@@ -28,10 +29,10 @@ package idcard {
     }
 }
 
+main --> Factory: Uses >
 Factory -> Product: Creates >
-
-Factory o--> FactoryIface
-FactoryIface <|.. IDCardFactory
+Factory *--> FactoryImpl
+FactoryImpl <|.. IDCardFactory
 IDCardFactory -> IDCard: Creates >
 Product <|.. IDCard
 

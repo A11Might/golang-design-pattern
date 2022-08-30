@@ -18,12 +18,12 @@
 
 ### 示例程序类图
 
-1. `Display` 抽象类：抽象部分（Abstraction），抽象的最上层，定义基本功能。
-2. `CountDisplay` 抽象类：改善后的抽象部分（RefinedAbstraction），在 Abstraction 的基础上增加功能。
-3. `DisplayImpl` 接口：实现者（Implementor），实现的最上层，定义用于实现 Abstraction 功能的方法。
-4. `StringDisplayImpl` 类：具体实现者（ConcreteImplementor），实现 Implementor 定义的方法。
+1. Display 抽象类：抽象部分（Abstraction），抽象的最上层，定义基本功能。
+2. CountDisplay 抽象类：改善后的抽象部分（RefinedAbstraction），在 Abstraction 的基础上增加功能。
+3. DisplayImpl 接口：实现者（Implementor），实现的最上层，定义用于实现 Abstraction 功能的方法。
+4. StringDisplayImpl 类：具体实现者（ConcreteImplementor），实现 Implementor 定义的方法。
 
-`Display` 抽象类和 `CountDisplay` 抽象类是类的功能层次结构，`DisplayImpl` 接口和 `StringDisplayImpl` 类是类的实现层次结构，impl 是它们之间的桥梁。
+Display 抽象类和 CountDisplay 抽象类是类的功能层次结构，DisplayImpl 接口和 StringDisplayImpl 类是类的实现层次结构，impl 是它们之间的桥梁。
 
 ![bridge](./bridge.png)
 
