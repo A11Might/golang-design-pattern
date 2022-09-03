@@ -1,0 +1,49 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+object main
+note right of main
+b1 := NewStringDisplay("Hello, world.")
+b2 := NewSideBorder(b1, '#')
+b3 := NewFullBorder(b2)
+b3.Show()
+end note
+abstract class Display {
+    DisplayImpl
+    Show()
+}
+interface DisplayImpl {
+    {abstract}GetColumns()
+    {abstract}GetRows()
+    {abstract}GetRowText()
+}
+class StringDisplay {
+    str
+    GetColumns()
+    GetRows()
+    GetRowText()
+}
+abstract class Border {
+    display Display
+}
+class SideBorder {
+    borderChar
+    GetColumns()
+    GetRows()
+    GetRowText()
+}
+class FullBorder {
+    GetColumns()
+    GetRows()
+    GetRowText()
+}
+
+main --> Display
+Display *--> DisplayImpl
+DisplayImpl <|.. StringDisplay
+Display <--o Border
+Border <|-- SideBorder
+note right on link: 实际实现直接\n聚合 Display
+Border <|-- FullBorder
+
+@enduml
