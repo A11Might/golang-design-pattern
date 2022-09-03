@@ -6,7 +6,7 @@
 
 Go 语言设计模式的实现代码，[Quick Start](./tutorial/tutorial.md)。
 
-🚧施工中，进度[9/23]
+🚧施工中，进度[10/23]
 
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
@@ -47,6 +47,7 @@ Go 语言设计模式的实现代码，[Quick Start](./tutorial/tutorial.md)。
 ### 分开考虑
 
 - [Bridge 模式（桥接模式）](./09_bridge/)：将类的功能层次结构与实现层次结构分离
+- [Strategy 模式（策略模式）](./10_strategy/)：整体地替换算法
 
 ## GoF 设计模式分类
 
@@ -67,6 +68,7 @@ Go 语言设计模式的实现代码，[Quick Start](./tutorial/tutorial.md)。
 
 - [Iterator 模式（迭代器模式）](./01_iterator/)
 - [Template Method 模式（模板方法模式）](./03_template_method/)
+- [Strategy 模式（策略模式）](./10_strategy/)：整体地替换算法
 
 ## 感谢
 

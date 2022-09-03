@@ -1,0 +1,42 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+object main
+note right of main
+s1 := NewWinningStrategy(314)
+p1 := NewPlay("Taro", s1)
+p1.NextHand()
+...
+s2 := NewProbStrategy(314)
+p2 := NewPlay("Hana", s2)
+p2.NextHand()
+end note
+class Play {
+    strategy Strategy
+    NextHand()
+    Win()
+    Lost()
+    Even()
+}
+note left of Play::NextHand
+strategy.NextHand()
+end note
+interface Strategy {
+    {abstract}NextHand()
+    {abstract}Study()
+}
+class WinningStrategy {
+    NextHand()
+    Study()
+}
+class ProbStrategy {
+    NextHand()
+    Study()
+}
+
+main --> Play: Uses >
+Play o-> Strategy
+Strategy <|.. WinningStrategy
+Strategy <|.. ProbStrategy
+
+@enduml
