@@ -16,7 +16,7 @@ class File {
 }
 class Directory {
     name
-    directory []*Entry
+    directory []Entry
     GetName()
     GetSize()
     Add()

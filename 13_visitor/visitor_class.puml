@@ -1,0 +1,44 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+object main
+interface Visistor {
+    {abstract}VisitFile(*File)
+    {abstract}VisitDirectory(*Directory)
+}
+class ListVisitor {
+    currentDir
+    VisistFile(*File)
+    VisistDirectory(*Directory)
+}
+interface Element {
+    {abstract}Accept(Visistor)
+    {abstract}GetName()
+    {abstract}GetSize()
+}
+class File {
+    name
+    size
+    Accept(Visistor)
+    GetName()
+    GetSize()
+}
+class Directory {
+    name
+    dir []Element
+    Accept(Visistor)
+    GetName()
+    GetSize()
+    Add()
+}
+
+
+Visistor <|.. ListVisitor
+ListVisitor <-- main: Uses <
+Element <|.. File
+Element <|.. Directory
+Element <--o Directory
+File <-- main: Uses <
+Directory <-- main: Uses <
+
+@enduml

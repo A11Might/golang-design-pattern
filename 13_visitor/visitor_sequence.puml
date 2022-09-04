@@ -1,0 +1,25 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+participant main as main
+participant "v:ListVisitor" as lv
+participant "d:Directory" as d
+participant "f1:File" as f1
+participant "f2:File" as f2
+
+main -> lv ** : NewListVisitor()
+main -> d: d.Accept(v)
+lv <- d: v.VisitDirectory(d)
+lv --> d
+lv <-- d
+lv -> f1: f1.Accept(v)
+lv <- f1: v.VisistFile(f1)
+lv --> f1
+lv <-- f1
+lv -> f2: f2.Accept(v)
+lv <- f2: v.VisitFile(f2)
+lv --> f2
+lv <-- f2
+main <-- d
+
+@enduml
