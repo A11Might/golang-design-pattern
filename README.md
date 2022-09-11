@@ -6,7 +6,7 @@
 
 Go 语言设计模式的实现代码，[Quick Start](./tutorial/tutorial.md)。
 
-🚧施工中，进度[13/23]
+🚧施工中，进度[14/23]
 
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
@@ -59,6 +59,7 @@ Go 语言设计模式的实现代码，[Quick Start](./tutorial/tutorial.md)。
 ### 访问数据结构
 
 - [Visitor 模式（访问者模式）](./13_visitor/)：访问数据结构并处理数据
+- [Chain of Responsibility 模式（责任链模式）](./14_chain_of_responsibility/)：推卸责任
 
 ## GoF 设计模式分类
 
@@ -79,6 +80,7 @@ Go 语言设计模式的实现代码，[Quick Start](./tutorial/tutorial.md)。
 
 ### 行为型设计模式
 
+- [Chain of Responsibility 模式（责任链模式）](./14_chain_of_responsibility/)
 - [Iterator 模式（迭代器模式）](./01_iterator/)
 - [Template Method 模式（模板方法模式）](./03_template_method/)
 - [Strategy 模式（策略模式）](./10_strategy/)

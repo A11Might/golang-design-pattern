@@ -1,0 +1,40 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+object main
+abstract class Support {
+    SupportImpl
+	name
+	next *Support
+    SetNext()
+    Support()
+}
+interface SupportImpl {
+	{abstract}resolve()
+}
+class NoSupport {
+    Support
+	resolve()
+}
+class LimitSupport {
+    Support
+	resolve()
+}
+class OddSupport {
+    Support
+	resolve()
+}
+class SpecialSupport {
+    Support
+	resolve()
+}
+
+main -> Support: Request >
+Support o--> Support
+Support *--> SupportImpl
+SupportImpl <|.. NoSupport
+SupportImpl <|.. LimitSupport
+SupportImpl <|.. OddSupport
+SupportImpl <|.. SpecialSupport
+
+@enduml
