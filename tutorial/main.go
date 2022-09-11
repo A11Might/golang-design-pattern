@@ -42,7 +42,7 @@ func (x *xxFoo) AbstractMethod() {
 }
 
 func main() {
-	foo := Foo{
+	foo := &Foo{
 		FooImpl: &xxFoo{
 			// 初始化字段值
 			Foo: &Foo{

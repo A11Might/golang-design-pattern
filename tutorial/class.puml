@@ -16,12 +16,17 @@ interface FooImpl {
 note right of FooImpl::AbstractMethod
     斜体为抽象方法
 end note
+skinparam classAttributeIconSize 0
 class xxFoo {
+    *Foo
     xxFooField
     GetFooField()
 	SetFooField()
 	AbstractMethod()
 }
+note right of xxFoo::Foo
+xxFoo 组合 Foo 实现继承
+end note
 
 main -> Foo: Uses >
 Foo *--> FooImpl
