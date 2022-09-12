@@ -1,0 +1,17 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+participant ":LoginFrame" as lf
+participant ":ColleagueCheckbox" as cb
+participant ":ColleagueTextField" as tf
+participant ":ColleagueButton" as bt
+
+autoactivate on
+lf <- cb: ColleagueChanged()
+lf -> tf: SetColleagueEnable()
+return
+lf -> bt: SetColleagueEnable()
+return
+return
+
+@enduml

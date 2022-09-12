@@ -1,0 +1,52 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+interface Mediator {
+    {abstract}CreateColleagues()
+    {abstract}ColleagueChanged()
+}
+class LoginFrame {
+    checkGuest *ColleagueCheckbox
+    checkLogin *ColleagueCheckbox
+    textUser *ColleagueTextField
+    textPass *ColleagueTextField
+    butonOk *ColleagueButton
+    buttonCancel *ColleagueButton
+    CreateColeagues()
+    ColleagueChanged()
+    userPassChanged()
+}
+interface Colleague {
+    {abstract}SetMediator()
+    {abstract}SetColleagueEnabled()
+}
+class ColleagueButton {
+    mediator Mediator
+    SetMediator()
+    SetColleagueEnabled()
+}
+class ColleagueTextField {
+    mediator Mediator
+    SetMediator()
+    SetColleagueEnabled()
+    TextValueChanged()
+}
+class ColleagueCheckbox {
+    mediator Mediator
+    SetMediator()
+    SetColleagueEnabled()
+    ItemStateChanged()
+}
+
+Mediator <|. LoginFrame
+Colleague <|. ColleagueButton
+Colleague <|. ColleagueTextField
+Colleague <|. ColleagueCheckbox
+Mediator <-o ColleagueButton
+Mediator <-o ColleagueTextField
+Mediator <-o ColleagueCheckbox
+LoginFrame o--> ColleagueButton
+LoginFrame o--> ColleagueTextField
+LoginFrame o--> ColleagueCheckbox
+
+@enduml

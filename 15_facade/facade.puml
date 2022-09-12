@@ -1,0 +1,24 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+object main
+class PageMaker {
+    MakeWelcomePage()
+}
+class HTMLWriter {
+    writer
+    Title()
+    Paragraph()
+    Link()
+    Mailto()
+    Close()
+}
+class Database {
+    GetProperties()
+}
+
+main --> PageMaker: Uses >
+PageMaker --> HTMLWriter: Uses >
+PageMaker --> Database: Uses >
+
+@enduml
