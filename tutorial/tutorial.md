@@ -33,7 +33,7 @@ Golang 通过结构体（Foo）匿名组合（FooImpl）接口来实现抽象类
      }
      ```
 
-   - 如果需要在子类中使用，则需要 FooImpl 接口中声明 GetFooField()、SetFooField() 方法，并初始化在子类中。
+   - 如果需要在子类中使用，则需要 FooImpl 接口中声明 GetFooField()、SetFooField() 方法，供抽象类使用，并在子类中初始化，供子类使用。
 
      ```go
      foo := &Foo{

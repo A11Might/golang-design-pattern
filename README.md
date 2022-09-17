@@ -6,7 +6,7 @@
 
 Go 语言设计模式的实现代码，[Quick Start](./tutorial/tutorial.md)。
 
-🚧施工中，进度[16/23]
+🚧施工中，进度[17/23]
 
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
@@ -67,6 +67,10 @@ Go 语言设计模式的实现代码，[Quick Start](./tutorial/tutorial.md)。
 - [Facade 模式（外观模式）](./15_facade/)：简单窗口
 - [Mediator 模式（中介者模式）](./16_mediator/)：只有一个仲裁者
 
+### 管理状态
+
+- [Observer 模式（观察者模式）](./17_observer/)：发送状态变化通知
+
 ## GoF 设计模式分类
 
 ### 创建型设计模式
@@ -90,8 +94,9 @@ Go 语言设计模式的实现代码，[Quick Start](./tutorial/tutorial.md)。
 - [Chain of Responsibility 模式（责任链模式）](./14_chain_of_responsibility/)
 - [Iterator 模式（迭代器模式）](./01_iterator/)
 - [Mediator 模式（中介者模式）](./16_mediator/)
-- [Template Method 模式（模板方法模式）](./03_template_method/)
+- [Observer 模式（观察者模式）](./17_observer/)
 - [Strategy 模式（策略模式）](./10_strategy/)
+- [Template Method 模式（模板方法模式）](./03_template_method/)
 - [Visitor 模式（访问者模式）](./13_visitor)
 
 ## 感谢

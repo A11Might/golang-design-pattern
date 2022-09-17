@@ -1,0 +1,53 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+object client
+interface INumberGenerator {
+    {abstract}GetNumber()
+    {abstract}Execute()
+}
+abstract class NumberGenerator {
+    INumberGenerator
+    observers []Observer
+    AddObserver()
+    DeleteObserver()
+    NotifyObservers()
+}
+note right of NumberGenerator::NotifyObservers
+    for _, o := range n.observers {
+        o.Update(n)
+    }
+end note
+class RandomNumberGenerator {
+    NumberGenerator
+    random
+    GetNumber()
+    Execute()
+}
+note right of RandomNumberGenerator::Execute
+    n.number = rand.Intn(10)
+    n.NotifyObservers()
+end note
+interface Observer {
+    {abstract}Update()
+}
+class DigitObserver {
+    Update()
+}
+class GraphObserver {
+    Update()
+}
+
+Observer <|.. DigitObserver
+Observer <|.. GraphObserver
+Observer <-o NumberGenerator: Notifies <
+INumberGenerator <|.. NumberGenerator
+INumberGenerator <|.. RandomNumberGenerator
+NumberGenerator <|-- RandomNumberGenerator
+RandomNumberGenerator <-- client
+note right on link
+	o := NewDigitObserver()
+	generator.AddObserver(o)
+end note
+
+@enduml
