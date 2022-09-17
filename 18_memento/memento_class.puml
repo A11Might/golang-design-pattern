@@ -1,0 +1,33 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+object main
+note top of main
+    m := gamer.CreateMemento()
+    gamer.RestoreMemento(m)
+end note
+class Gamer {
+    money
+    fruits
+    random
+    fruitsName
+    GetMoney()
+    Bet()
+    CreateMemento()
+    RestoreMemento()
+    ToString()
+    getFruit()
+}
+class Memento {
+    money
+    fruits
+    GetMoney()
+    getFruit()
+    addFruit()
+}
+
+main -> Gamer: Requests >
+Gamer --> Memento: Creates >
+main o--> Memento
+
+@enduml

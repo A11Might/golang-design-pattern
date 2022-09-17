@@ -1,7 +1,7 @@
 @startuml
 'https://plantuml.com/class-diagram
 
-object client
+object main
 interface INumberGenerator {
     {abstract}GetNumber()
     {abstract}Execute()
@@ -44,7 +44,7 @@ Observer <-o NumberGenerator: Notifies <
 INumberGenerator <|.. NumberGenerator
 INumberGenerator <|.. RandomNumberGenerator
 NumberGenerator <|-- RandomNumberGenerator
-RandomNumberGenerator <-- client
+RandomNumberGenerator <-- main
 note right on link
 	o := NewDigitObserver()
 	generator.AddObserver(o)

@@ -1,0 +1,55 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+object main
+interface Context {
+    {abstract}SetClock()
+    {abstract}ChangeState()
+    {abstract}CallSecuritCenter()
+    {abstract}RecordLog()
+}
+class SafeFrame {
+    state State
+    ActionPerformed()
+    SetClock()
+    ChangeState()
+    CallSecuritCenter()
+    RecordLog()
+}
+note left of SafeFrame::ActionPerformed
+    state.DoUse() 或
+    state.DoAlarm() 或
+    state.DoPhone()
+end note
+interface State {
+    {abstract}DoClock()
+    {abstract}DoUse()
+    {abstract}DoAlarm()
+    {abstract}DoPhone()
+}
+class DayState {
+    DoClock()
+    DoUse()
+    DoAlarm()
+    DoPhone()
+}
+class NightState {
+    DoClock()
+    DoUse()
+    DoAlarm()
+    DoPhone()
+}
+
+Context <|.. SafeFrame
+SafeFrame o-> State
+State <|.. DayState
+State <|.. NightState
+SafeFrame <-- main: Uses <
+note bottom on link
+    s := GetDayState()
+    c := NewSafeFrame(s)
+    c.ActionPerformed()
+end note
+
+
+@enduml

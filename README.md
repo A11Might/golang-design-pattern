@@ -6,7 +6,7 @@
 
 Go 语言设计模式的实现代码，[Quick Start](./tutorial/tutorial.md)。
 
-🚧施工中，进度[17/23]
+🚧施工中，进度[19/23]
 
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
@@ -20,6 +20,7 @@ Go 语言设计模式的实现代码，[Quick Start](./tutorial/tutorial.md)。
   - [一致性](#%E4%B8%80%E8%87%B4%E6%80%A7)
   - [访问数据结构](#%E8%AE%BF%E9%97%AE%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84)
   - [简单化](#%E7%AE%80%E5%8D%95%E5%8C%96)
+  - [管理状态](#%E7%AE%A1%E7%90%86%E7%8A%B6%E6%80%81)
 - [GoF 设计模式分类](#gof-%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E5%88%86%E7%B1%BB)
   - [创建型设计模式](#%E5%88%9B%E5%BB%BA%E5%9E%8B%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F)
   - [结构性设计模式](#%E7%BB%93%E6%9E%84%E6%80%A7%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F)
@@ -70,6 +71,8 @@ Go 语言设计模式的实现代码，[Quick Start](./tutorial/tutorial.md)。
 ### 管理状态
 
 - [Observer 模式（观察者模式）](./17_observer/)：发送状态变化通知
+- [Memento 模式（备忘录模式）](./18_memento/)：保存对象状态
+- [State 模式（状态模式）](./19_state/)：用类表示状态
 
 ## GoF 设计模式分类
 
@@ -94,7 +97,9 @@ Go 语言设计模式的实现代码，[Quick Start](./tutorial/tutorial.md)。
 - [Chain of Responsibility 模式（责任链模式）](./14_chain_of_responsibility/)
 - [Iterator 模式（迭代器模式）](./01_iterator/)
 - [Mediator 模式（中介者模式）](./16_mediator/)
+- [Memento 模式（备忘录模式）](./18_memento/)
 - [Observer 模式（观察者模式）](./17_observer/)
+- [State 模式（状态模式）](./19_state/)
 - [Strategy 模式（策略模式）](./10_strategy/)
 - [Template Method 模式（模板方法模式）](./03_template_method/)
 - [Visitor 模式（访问者模式）](./13_visitor)

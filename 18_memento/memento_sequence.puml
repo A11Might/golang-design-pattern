@@ -1,0 +1,17 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+participant main as main
+participant ":Gamer" as gamer
+participant ":Memento" as memento
+
+autoactivate on
+main -> gamer: CreateMemento()
+gamer -> memento **: NewMemento()
+gamer -> memento: AddFruit()
+return
+main <-- gamer
+main -> gamer: RestoreMemento()
+return
+
+@enduml

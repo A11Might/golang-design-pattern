@@ -1,0 +1,25 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+participant "main" as main
+participant ":SafeFrame" as sf
+participant ":DayState" as ds
+participant ":NightState" as ns
+
+autoactivate on
+main -> sf: ActionPerformed()
+sf -> ds: DoUse()
+return
+return
+main -> sf: SetClock()
+sf -> ds: DoClock()
+sf <- ds: ChangeState()
+return
+return
+return
+main -> sf: ActionPerformed()
+sf -> ns: DoUse()
+return
+return
+
+@enduml
