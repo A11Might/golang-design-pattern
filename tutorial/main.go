@@ -2,9 +2,15 @@ package main
 
 import "fmt"
 
+type IFoo interface {
+	GetFooField() string
+	SetFooField(string)
+	AbstractMethod()
+}
+
 // 抽象类(abstract class)
 type Foo struct {
-	FooImpl
+	IFoo
 
 	fooField string
 }
@@ -16,51 +22,48 @@ func (f *Foo) Method() {
 	fmt.Println("call Foo Method")
 }
 
-type FooImpl interface {
-	GetFooField() string
-	SetFooField(string)
-	AbstractMethod()
-}
-
 // 具体子类(concrete subclass)
-type xxFoo struct {
+type XxFoo struct {
 	*Foo
 
 	xxFooField string
 }
 
-func (x *xxFoo) GetFooField() string {
+func NewXxFoo(fooField, xxFooField string) *XxFoo {
+	xxFoo := &XxFoo{
+		Foo: &Foo{
+			fooField: fooField,
+		},
+		xxFooField: xxFooField,
+	}
+	xxFoo.Foo.IFoo = xxFoo
+	return xxFoo
+}
+
+func (x *XxFoo) GetFooField() string {
 	return x.fooField
 }
 
-func (x *xxFoo) SetFooField(field string) {
+func (x *XxFoo) SetFooField(field string) {
 	x.fooField = field
 }
 
-func (x *xxFoo) AbstractMethod() {
+func (x *XxFoo) AbstractMethod() {
 	fmt.Println("call xxFoo AbstractMethod")
 }
 
 func main() {
-	foo := &Foo{
-		FooImpl: &xxFoo{
-			// 初始化字段值
-			Foo: &Foo{
-				fooField: "origin foo",
-			},
-			xxFooField: "origin xx foo",
-		},
-	}
+	xxFoo := NewXxFoo("origin foo", "origin xx foo")
 
 	fmt.Println("=====获取字段值=====")
-	fmt.Println("field:", foo.GetFooField())
+	fmt.Println("field:", xxFoo.GetFooField())
 	fmt.Println("=====设置字段值=====")
-	foo.SetFooField("foooooo")
-	fmt.Println("field:", foo.GetFooField())
+	xxFoo.SetFooField("foooooo")
+	fmt.Println("field:", xxFoo.GetFooField())
 	fmt.Println("=====使用子类方法=====")
-	foo.AbstractMethod()
+	xxFoo.AbstractMethod()
 	fmt.Println("=====使用父类方法=====")
-	foo.Method()
+	xxFoo.Method()
 
 	// Output:
 	// =====获取字段值=====

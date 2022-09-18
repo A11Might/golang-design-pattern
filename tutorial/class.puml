@@ -2,20 +2,16 @@
 'https://plantuml.com/class-diagram
 
 object main
+interface IFoo {
+    {abstract}GetFooField()
+	{abstract}SetFooField()
+	{abstract}AbstractMethod()
+}
 abstract class Foo {
     IFoo
     fooField
     Method()
 }
-note right: 三个区域分别是类名、字段名和方法名
-interface FooImpl {
-    {abstract}GetFooField()
-	{abstract}SetFooField()
-	{abstract}AbstractMethod()
-}
-note right of FooImpl::AbstractMethod
-    斜体为抽象方法
-end note
 skinparam classAttributeIconSize 0
 class xxFoo {
     *Foo
@@ -24,14 +20,10 @@ class xxFoo {
 	SetFooField()
 	AbstractMethod()
 }
-note right of xxFoo::Foo
-xxFoo 组合 Foo 实现继承
-end note
 
-main -> Foo: Uses >
-Foo *--> FooImpl
-note on link: Foo 组合 FooImpl 接口
-FooImpl <|.. xxFoo
-note on link: xxFoo 实现 FooImpl 接口
+main -> xxFoo: Uses >
+IFoo <|.. Foo
+IFoo <|.. xxFoo
+Foo <|-- xxFoo
 
 @enduml
