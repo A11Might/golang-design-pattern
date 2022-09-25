@@ -6,7 +6,7 @@
 
 Go 语言设计模式的实现代码，[Quick Start](./tutorial/tutorial.md)。
 
-🚧施工中，进度[20/23]
+🚧施工中，进度[21/23]
 
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
@@ -78,6 +78,7 @@ Go 语言设计模式的实现代码，[Quick Start](./tutorial/tutorial.md)。
 ### 避免浪费
 
 - [Flyweight 模式（享元模式）](./20_flyweight/)：共享对象，避免浪费
+- [Proxy 模式（代理模式）](./21_proxy/)：只在必要时生成实例
 
 ## GoF 设计模式分类
 
@@ -97,6 +98,7 @@ Go 语言设计模式的实现代码，[Quick Start](./tutorial/tutorial.md)。
 - [Decorator 模式（装饰模式）](./12_decorator/)
 - [Facade 模式（外观模式）](./15_facade/)
 - [Flyweight 模式（享元模式）](./20_flyweight/)
+- [Proxy 模式（代理模式）](./21_proxy/)
 
 ### 行为型设计模式
 

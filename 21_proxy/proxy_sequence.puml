@@ -1,0 +1,22 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+participant "main" as main
+participant ":PrinterProxy" as pp
+participant ":Printer" as p
+
+autoactivate on
+main -> pp **: NewPrinterProxy()
+main -> pp: GetPrinterName()
+return
+main -> pp: SetPrinterName()
+return
+main -> pp: GetPrinterName()
+return
+main -> pp: Print()
+pp -> p **: NewPrinter()
+pp -> p: Print()
+return
+return 
+
+@enduml

@@ -1,0 +1,36 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+object main
+interface Printable {
+    {abstract}SetPrinterName()
+    {abstract}GetPrinterName()
+    {abstract}Print()
+}
+class Printer {
+    name
+    SetPrinterName()
+    GetPrinterName()
+    Print()
+    heavyJob()
+}
+class PrinterProxy {
+    name
+    real *Printer
+    SetPrinterName()
+    GetPrinterName()
+    Print()
+    realize()
+}
+note left of PrinterProxy::Print()
+    p.realize()
+    p.real.Print(str)
+end note
+
+main -> Printable: Uses >
+Printable <|.. PrinterProxy
+Printable <|.. Printer
+PrinterProxy o-> Printer: Uses >
+
+
+@enduml
