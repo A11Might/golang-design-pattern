@@ -1,0 +1,32 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+object main
+class BigChar {
+    charName
+    fontData
+    Print()
+}
+class BigCharFactory {
+    pool map[rune]*BigChar
+    GetBigChar()
+}
+note left of BigCharFactory::GetBigChar
+    bc, ok := b.pool[charName]
+    if !ok {
+        bc = NewBigChar(charName)
+        b.pool[charName] = bc
+    }
+    return bc
+end note
+class BigString {
+    bigChars []*BigChar
+    Print()
+}
+
+main -> BigString: Uses >
+BigString --> BigCharFactory: Uses >
+BigCharFactory o--> BigChar: Creates >
+BigString o--> BigChar: Uses >
+
+@enduml
