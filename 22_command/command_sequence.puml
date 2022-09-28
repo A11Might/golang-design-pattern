@@ -1,0 +1,26 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+participant ":main" as main
+participant ":DrawCommand" as dcommand
+participant ":DrawCanvas" as dcanvas
+participant ":MacroCommand" as mcommand
+
+autoactivate on
+main -> dcommand **: NewDrawCommand()
+main -> dcommand: Execute()
+dcommand -> dcanvas: Draw()
+return
+return
+
+main -> dcanvas: Paint()
+dcanvas -> mcommand: Execute()
+mcommand -> dcommand: Execute()
+dcommand -> dcanvas: Draw()
+return
+return
+return
+return
+
+
+@enduml

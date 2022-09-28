@@ -1,0 +1,43 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+object main
+interface Command {
+    {abstract}Execute()
+}
+class DrawCommand {
+    drawable Drawable
+    Execute()
+}
+note left of DrawCommand::Execute()
+    d.drawable.Draw(d.x, d.y)
+end note
+class MacroCommand {
+    commands []Command
+    Execute()
+    Append()
+    Undo()
+    Clear()
+}
+interface Drawable {
+    {abstract}Draw()
+}
+class DrawCanvas {
+    history *MacroCommand
+    Draw()
+    Paint()
+}
+
+main -> Command: Uses >
+note on link
+    cmd := NewDrawCommand(drawable, x, y)
+    cmd.Execute()
+end note
+Command <|.. DrawCommand
+Command <|.. MacroCommand
+Command <--o MacroCommand
+DrawCommand <--o Drawable
+Drawable <|.. DrawCanvas
+MacroCommand <--o DrawCanvas
+
+@enduml

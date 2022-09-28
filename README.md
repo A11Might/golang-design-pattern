@@ -6,7 +6,7 @@
 
 Go 语言设计模式的实现代码，[Quick Start](./tutorial/tutorial.md)。
 
-🚧施工中，进度[21/23]
+🚧施工中，进度[22/23]
 
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
@@ -22,6 +22,7 @@ Go 语言设计模式的实现代码，[Quick Start](./tutorial/tutorial.md)。
   - [简单化](#%E7%AE%80%E5%8D%95%E5%8C%96)
   - [管理状态](#%E7%AE%A1%E7%90%86%E7%8A%B6%E6%80%81)
   - [避免浪费](#%E9%81%BF%E5%85%8D%E6%B5%AA%E8%B4%B9)
+  - [用类来实现](#%E7%94%A8%E7%B1%BB%E6%9D%A5%E5%AE%9E%E7%8E%B0)
 - [GoF 设计模式分类](#gof-%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E5%88%86%E7%B1%BB)
   - [创建型设计模式](#%E5%88%9B%E5%BB%BA%E5%9E%8B%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F)
   - [结构性设计模式](#%E7%BB%93%E6%9E%84%E6%80%A7%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F)
@@ -80,6 +81,10 @@ Go 语言设计模式的实现代码，[Quick Start](./tutorial/tutorial.md)。
 - [Flyweight 模式（享元模式）](./20_flyweight/)：共享对象，避免浪费
 - [Proxy 模式（代理模式）](./21_proxy/)：只在必要时生成实例
 
+### 用类来实现
+
+- [Command 模式（命令模式）](./22_command/)：命令也是类
+
 ## GoF 设计模式分类
 
 ### 创建型设计模式
@@ -103,6 +108,7 @@ Go 语言设计模式的实现代码，[Quick Start](./tutorial/tutorial.md)。
 ### 行为型设计模式
 
 - [Chain of Responsibility 模式（责任链模式）](./14_chain_of_responsibility/)
+- [Command 模式（命令模式）](./22_command/)
 - [Iterator 模式（迭代器模式）](./01_iterator/)
 - [Mediator 模式（中介者模式）](./16_mediator/)
 - [Memento 模式（备忘录模式）](./18_memento/)
