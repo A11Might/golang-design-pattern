@@ -120,6 +120,6 @@ Go 语言设计模式的实现代码，[Quick Start](./tutorial/tutorial.md)。
 
 ## 感谢
 
-- [图解设计模式](https://book.douban.com/subject/26933281/)
-- [Refactoring.Guru 设计模式](https://refactoringguru.cn/design-patterns)
-- [senghoo/golang-design-pattern](https://github.com/senghoo/golang-design-pattern) 
+一直都想学习设计模式，但也只是想了，直到被 [vasily](https://www.vasily.cool/) 刺激 `你能别写哈巴代码了吗`，于是痛定思痛买了本[图解设计模式](https://book.douban.com/subject/26933281/)研读。~~由于平时又忙，周末又懒，~~ 断断续续看了一个半月，终于读完了。收获很多，系统的了解了 GoF 设计模式，Golang 的使用也有所进步（可能），但离写出非常漂亮的代码还有段距离，用书中的话与大家共勉，**Enjoy Patterns!**
+
+本 repo 参考了 [senghoo/golang-design-pattern](https://github.com/senghoo/golang-design-pattern)  的项目结构，代码实现和类图参考了 [Refactoring.Guru 设计模式](https://refactoringguru.cn/design-patterns)。
