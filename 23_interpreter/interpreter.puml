@@ -1,0 +1,48 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+object main
+class Context {
+    NextToken()
+    CurrentToken()
+    SkipToken()
+    CurrentNumber()
+}
+interface Node {
+    {abstract}Parse()
+}
+class ProgramNode {
+    commandListNode Node
+    Parse()
+}
+class CommandListNode {
+    list Node
+    Parse()
+}
+class CommandNode {
+    node Node
+    Parse()
+}
+class RepeatCommandNode {
+    number
+    commandListNode Node
+    Parse()
+}
+class PrimitiveCommandNode {
+    name
+    Parse()
+}
+
+main -> Context: Creates >
+main -> Node: Uses >
+Node --> ProgramNode
+Node --> CommandListNode
+Node --> CommandNode
+Node --> RepeatCommandNode
+Node --> PrimitiveCommandNode
+Node <--o ProgramNode
+Node <--o CommandListNode
+Node <--o CommandNode
+Node <--o RepeatCommandNode
+
+@enduml

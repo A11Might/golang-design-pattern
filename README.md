@@ -6,8 +6,6 @@
 
 Go 语言设计模式的实现代码，[Quick Start](./tutorial/tutorial.md)。
 
-🚧施工中，进度[22/23]
-
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 **Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
@@ -84,6 +82,7 @@ Go 语言设计模式的实现代码，[Quick Start](./tutorial/tutorial.md)。
 ### 用类来实现
 
 - [Command 模式（命令模式）](./22_command/)：命令也是类
+- [Interpreter 模式（解释器模式）](./23_interpreter/)：语法规则也是类
 
 ## GoF 设计模式分类
 
@@ -109,6 +108,7 @@ Go 语言设计模式的实现代码，[Quick Start](./tutorial/tutorial.md)。
 
 - [Chain of Responsibility 模式（责任链模式）](./14_chain_of_responsibility/)
 - [Command 模式（命令模式）](./22_command/)
+- [Interpreter 模式（解释器模式）](./23_interpreter/)
 - [Iterator 模式（迭代器模式）](./01_iterator/)
 - [Mediator 模式（中介者模式）](./16_mediator/)
 - [Memento 模式（备忘录模式）](./18_memento/)
