@@ -1,8 +1,11 @@
 ## Template Method 模式
 
-在父类中定义处理流程的框架，在子类中实现具体处理的模式称为 Template Method 模式（模板方法模式）。
+> **模版方法** 是一种行为设计模式， 它在基类中定义了一个算法的框架， 允许子类在不修改结构的情况下重写算法的特定步骤。
 
 ### 示例程序类图
+
+1. Display 抽象类：抽象类（AbstractClass），定义模板方法及模板方法使用的抽象方法。
+2. CharDisplay 类、StringDisplay 类：具体类（ConcreteClass），实现 AbstractClass 定义的抽象方法。
 
 ![template_method](./template_method.png)
 

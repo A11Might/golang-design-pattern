@@ -3,9 +3,9 @@
 
 object main
 interface DisplayIface {
-    Open()
-	Print()
-	Close()
+    {abstract}Open()
+	{abstract}Print()
+	{abstract}Close()
 }
 abstract class Display {
     DisplayIface
@@ -24,7 +24,7 @@ class StringDisplay {
 }
 
 main -> Display: Uses >
-Display o--> DisplayIface
+Display *--> DisplayIface
 DisplayIface <|.. CharDisplay
 DisplayIface <|.. StringDisplay
 

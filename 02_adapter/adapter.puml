@@ -3,11 +3,11 @@
 
 object main
 interface Print {
-    PrintWeak()
-    PrintStrong()
+    {abstract}PrintWeak()
+    {abstract}PrintStrong()
 }
 class PrintBanner {
-    banner
+    banner *Banner
     PrintWeak()
     PrintStrong()
 }
@@ -17,9 +17,9 @@ class Banner {
     PrintWithAster()
 }
 
-main --> Print: Uses >
-Print <|. PrintBanner
-PrintBanner o-> Banner
+main -> Print: Uses >
+Print <|.. PrintBanner
+PrintBanner o--> Banner
 
 
 @enduml

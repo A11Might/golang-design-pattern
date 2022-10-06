@@ -2,18 +2,18 @@
 'https://plantuml.com/class-diagram
 
 interface Aggregate {
-    Iterator()
+    {abstract}Iterator()
 }
 interface Iterator {
-    HasNext()
-    Next()
+    {abstract}HasNext()
+    {abstract}Next()
 }
 class Book {
     name
     GetName()
 }
 class BookShelf {
-    books
+    books []*Book
     last
     GetBookAt()
     AppendBook()
@@ -21,7 +21,7 @@ class BookShelf {
     Iterator()
 }
 class BookShelfIterator {
-    bookShelf
+    bookShelf *BookShelf
     index
     HasNext()
     Next()
