@@ -2,21 +2,30 @@
 'https://plantuml.com/class-diagram
 
 object main
-interface DisplayIface {
+interface IDisplay {
     {abstract}Open()
 	{abstract}Print()
 	{abstract}Close()
 }
 abstract class Display {
-    DisplayIface
-    Display()
+    i DisplayIface
+    Show()
 }
+note right of Display::i
+    Open()
+    for i := 0; i < 5; i++ {
+        Print()
+    }
+    Close()
+end note
 class CharDisplay {
+    Display
     Open()
 	Print()
 	Close()
 }
 class StringDisplay {
+    Display
     Open()
 	Print()
 	Close()
@@ -24,8 +33,8 @@ class StringDisplay {
 }
 
 main -> Display: Uses >
-Display *--> DisplayIface
-DisplayIface <|.. CharDisplay
-DisplayIface <|.. StringDisplay
+IDisplay <--o Display
+Display <|-- CharDisplay
+Display <|-- StringDisplay
 
 @enduml
