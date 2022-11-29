@@ -2,28 +2,25 @@
 'https://plantuml.com/class-diagram
 
 object main
-interface IFoo {
-    {abstract}GetFooField()
-	{abstract}SetFooField()
-	{abstract}AbstractMethod()
+interface iAlpha {
+    {abstract}work()
+	{abstract}common()
 }
-abstract class Foo {
-    IFoo
-    fooField
-    Method()
+abstract class alpha {
+    i iAlpha
+    name
+    common()
 }
-skinparam classAttributeIconSize 0
-class xxFoo {
-    *Foo
-    xxFooField
-    GetFooField()
-	SetFooField()
-	AbstractMethod()
+note right of alpha::common
+    i.work()
+end note
+class beta {
+    alpha
+    work()
 }
 
-main -> xxFoo: Uses >
-IFoo <|.. Foo
-IFoo <|.. xxFoo
-Foo <|-- xxFoo
+main -> iAlpha: Uses >
+iAlpha <--o alpha
+alpha <|-- beta
 
 @enduml
